@@ -1,15 +1,51 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Tesco SW - FE App</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/style.css">
     </head>
-    <body>
+    <body onload="loadCities()">
+        <header class="header">
+            <h1>Tesco FrontEnd App</h1>
+        </header>
+        <main class="body">
+            <div id="div-body-body" class="center-block">
+                <input class="center-block input-size40" placeholder="Choose a city..." type="text" id="search" autocomplete="off" name="search" list="datalist" oninput="loadCities()" onchange="setFinalCity(this.value)"><br>
+                <div id="div-data-list">
+                    <datalist id="datalist">
+                    </datalist>
+                </div>
+                <div id="div-selected-city">
+
+                </div>
+                <div id="div-message" class="center-block">
+
+                </div>
+                <br>
+                <div id="div-table">
+                    <table class="tg center">
+                        <thead>
+                            <tr id="table-head">
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="table-body">
+                            </tr>
+                            <tr id="table-body-second">
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <center><button type="button" class="btn" onclick="getLocation()">Current position</button></center>
+            </div>
+        </main>
+        <footer class="footer">
+            Application was created for Tesco SW, by FKropáček 2020
+        </footer>
+        <script src="js/main.js"></script>
     </body>
 </html>
